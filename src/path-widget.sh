@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/opt/homebrew/bin/bash
 
 # Imports
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/.."
@@ -21,6 +21,14 @@ PATH_FORMAT="${PATH_FORMAT:-$default_path_format}"
 # check user requested format
 if [[ ${PATH_FORMAT} == "relative" ]]; then
   current_path="$(echo ${current_path} | sed 's#'"$HOME"'#~#g')"
+elif [[ ${PATH_FORMAT} == "minimal" ]]; then
+  # First get the last 3 path segments
+  current_path="$(echo ${current_path} | sed 's#'"$HOME"'#~#g')"
+
+  if [[ $(echo "${current_path}" | grep -o '/' | wc -l ) -ge 4 ]]; then
+    last_three="$(echo "${current_path}" | rev | cut -d'/' -f1-3 | rev)"
+    current_path=".../${last_three}"
+  fi
 fi
 
 echo "#[fg=blue,bg=default]░  ${RESET}#[bg=default]${current_path} "

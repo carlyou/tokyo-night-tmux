@@ -1,10 +1,12 @@
-#!/usr/bin/env bash
+#!/opt/homebrew/bin/bash
 
 SHOW_NETSPEED=$(tmux show-option -gv @tokyo-night-tmux_show_git)
 if [ "$SHOW_NETSPEED" == "0" ]; then
   exit 0
 fi
 
+# Avoid git lock contention
+export GIT_OPTIONAL_LOCKS=0
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$CURRENT_DIR/../lib/coreutils-compat.sh"
 source "$CURRENT_DIR/themes.sh"
