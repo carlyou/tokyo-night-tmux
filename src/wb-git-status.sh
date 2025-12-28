@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 SHOW_WIDGET=$(tmux show-option -gv @tokyo-night-tmux_show_wbg)
 if [ "$SHOW_WIDGET" == "0" ]; then
   exit 0

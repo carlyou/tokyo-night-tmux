@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 
 SELECTED_THEME="$(tmux show-option -gv @tokyo-night-tmux_theme)"
 TRANSPARENT_THEME="$(tmux show-option -gv @tokyo-night-tmux_transparent)"

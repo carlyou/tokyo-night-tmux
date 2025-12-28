@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 
 SHOW_NETSPEED=$(tmux show-option -gv @tokyo-night-tmux_show_git)
 if [ "$SHOW_NETSPEED" == "0" ]; then

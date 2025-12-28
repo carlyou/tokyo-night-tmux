@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 #<------------------------------Netspeed widget for TMUX------------------------------------>
 # author : @tribhuwan-kumar
 # email : freakybytes@duck.com
