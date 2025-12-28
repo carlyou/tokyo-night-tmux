@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # title      Tokyo Night                                              +
 # version    1.0.0                                                    +
